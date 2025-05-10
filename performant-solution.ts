@@ -37,24 +37,14 @@ class Tokenizer {
   }
 
   onEnd() {
-    //   1- close the tokens
-    this.state.currentLineTokens.push(this.S.substring(this.state.lastTokenStart).trim())
-    this.state.lastTokenStart = this.S.length
-    //   2- close the photo
-    const [name, extension, city, timestamp] = this.state.currentLineTokens
-    this.state.photos.push({
-      name,
-      extension,
-      city,
-      timestamp
-    })
+    this.onTokenSeparator(this.S.length)
+    this.onNewLine(this.S.length)
   }
 }
 
 export const solution = (S: string) => {
   if (S.length === 0) return ''
   const state = parseState(S)
-  console.log('PARSED PHOTOS', state.photos)
   return S
 }
 

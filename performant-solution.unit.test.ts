@@ -8,12 +8,7 @@ describe('performant solution - unitary tests', () => {
       const input = 'a.txt, Buenos Aires, 2020-01-01 01:01:01'
       expect(parseState(input))
           .toEqual({
-            currentLineTokens: [
-                'a',
-                'txt',
-                'Buenos Aires',
-                '2020-01-01 01:01:01'
-            ],
+            currentLineTokens: [],
             lastTokenStart: input.length,
             photos: [
               {
