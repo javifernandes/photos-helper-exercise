@@ -2,7 +2,7 @@ import {solution as functionalSolution } from "./solution";
 import {solution as performantSolution } from './solutions/performant/performant-solution'
 
 describe.each([
-    // ['functional', functionalSolution],
+    ['functional', functionalSolution],
     ['performant', performantSolution]
 ])('photo-helper - SOLUTION [ %s ]', (name, solution) => {
 
