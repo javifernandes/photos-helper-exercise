@@ -1,5 +1,8 @@
 import {ProcessingState} from "./performant-solution-types";
 
+/**
+ *
+ */
 export class Tokenizer {
   S: string
   state: ProcessingState
@@ -45,25 +48,3 @@ export class Tokenizer {
   }
 }
 
-export const parseState = (S: string) => {
-
-  const tokenizer = new Tokenizer(S)
-
-  for (let i = 0; i < S.length; i++) {
-    const character = S[i]
-
-    if (character === '\n') {
-      tokenizer.onNewLine(i)
-    }
-    else if (character === ',' || character === '.') {
-      tokenizer.onTokenSeparator(i)
-    }
-  }
-
-  // last item
-  tokenizer.onEnd()
-
-  return tokenizer.state
-}
-
-export const tokenize = (S: string) => parseState(S).photos

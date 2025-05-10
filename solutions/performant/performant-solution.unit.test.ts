@@ -1,12 +1,12 @@
-import {parseState} from "./tokenizer";
+import {parse} from "./parse";
 
 describe('performant solution - unitary tests', () => {
 
-  describe('parseState()', () => {
+  describe('parse()', () => {
 
     it('should parse a single line', () => {
       const input = 'a.txt, Buenos Aires, 2020-01-01 01:01:01'
-      expect(parseState(input))
+      expect(parse(input))
           .toEqual({
             currentLineTokens: [],
             lastTokenStart: input.length,
@@ -35,7 +35,7 @@ describe('performant solution - unitary tests', () => {
 
     it('should parse 2 lines', () => {
       const input = 'a.txt, Buenos Aires, 2020-01-01 01:01:01\nb.txt, Buenos Aires, 2020-01-01 01:01:01'
-      expect(parseState(input))
+      expect(parse(input))
           .toEqual({
             currentLineTokens: [],
             lastTokenStart: input.length,
