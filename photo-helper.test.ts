@@ -43,6 +43,42 @@ describe('photo-helper', () => {
 
     })
 
+    describe('> 9 photos', () => {
+
+      describe('same city', () => {
+
+          it(`should return CITY_NR.ext}`, () => {
+            const input = [
+              'photo3.png, Buenos Aires, 2023-01-01 01:01:01',
+              'photo2.png, Buenos Aires, 2022-01-01 01:01:01',
+              'photo10.png, Buenos Aires, 2030-01-01 01:01:01',
+              'photo8.png, Buenos Aires, 2028-01-01 01:01:01',
+              'photo5.png, Buenos Aires, 2025-01-01 01:01:01',
+              'photo7.png, Buenos Aires, 2027-01-01 01:01:01',
+              'photo9.png, Buenos Aires, 2029-01-01 01:01:01',
+              'photo6.png, Buenos Aires, 2026-01-01 01:01:01',
+              'photo1.png, Buenos Aires, 2021-01-01 01:01:01',
+              'photo4.png, Buenos Aires, 2024-01-01 01:01:01',
+            ]
+            expect(solution(input.join('\n')))
+                .toEqual([
+                  'Buenos Aires03.png',
+                  'Buenos Aires02.png',
+                  'Buenos Aires10.png',
+                  'Buenos Aires08.png',
+                  'Buenos Aires05.png',
+                  'Buenos Aires07.png',
+                  'Buenos Aires09.png',
+                  'Buenos Aires06.png',
+                  'Buenos Aires01.png',
+                  'Buenos Aires04.png',
+                ].join('\n'))
+          })
+
+      })
+
+    })
+
   })
 
 })
