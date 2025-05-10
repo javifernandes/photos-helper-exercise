@@ -1,13 +1,8 @@
+import {ProcessingState} from "./performant-solution-types";
 
-type IterationState = {
-  lastTokenStart: number;
-  currentLineTokens: string[];
-  photos: any[];
-}
-
-class Tokenizer {
+export class Tokenizer {
   S: string
-  state: IterationState
+  state: ProcessingState
 
   constructor(S: string) {
     this.S = S
@@ -15,18 +10,27 @@ class Tokenizer {
       lastTokenStart: 0,
       currentLineTokens: [],
 
-      photos: []
+      photos: [],
+
+      cities: {},
     }
   }
 
   onNewLine(i: number) {
+    this.onTokenSeparator(i)
     const [name, extension, city, timestamp] = this.state.currentLineTokens
-    this.state.photos.push({
+    const photo = {
       name,
       extension,
       city,
-      timestamp
-    })
+      timestamp,
+      endPosition: i
+    }
+    this.state.photos.push(photo)
+    if (!this.state.cities[city]) {
+      this.state.cities[city] = []
+    }
+    this.state.cities[city].push(photo)
     this.state.currentLineTokens = []
     this.state.lastTokenStart = i
   }
@@ -37,15 +41,8 @@ class Tokenizer {
   }
 
   onEnd() {
-    this.onTokenSeparator(this.S.length)
     this.onNewLine(this.S.length)
   }
-}
-
-export const solution = (S: string) => {
-  if (S.length === 0) return ''
-  const state = parseState(S)
-  return S
 }
 
 export const parseState = (S: string) => {
@@ -68,3 +65,5 @@ export const parseState = (S: string) => {
 
   return tokenizer.state
 }
+
+export const tokenize = (S: string) => parseState(S).photos

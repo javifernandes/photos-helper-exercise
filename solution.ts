@@ -53,7 +53,7 @@ const assignName = (index: PhotoIndex) => (photo: Photo) =>
 const formatPhoto = (photo: Photo, n: string) => `${photo.city}${n}.${photo.extension}`
 const getPhotoNumber = (index: PhotoIndex, photo: Photo) =>
     padding(index[photo.city].length, index[photo.city].indexOf(photo) + 1)
-const padding = (totalAmount: number, number: number) =>
+export const padding = (totalAmount: number, number: number) =>
     `${number}`.padStart(`${totalAmount}`.length, '0')
 
 //
