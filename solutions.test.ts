@@ -1,5 +1,5 @@
-import {solution as functionalSolution } from "./solution";
-import {solution as performantSolution } from './solutions/performant/performant-solution'
+import {solution as functionalSolution } from "./solutions/functional/functional-solution";
+import {solution as performantSolution } from './solutions/performant/performant-solution';
 
 /**
  * A single set of tests that apply for both solutions

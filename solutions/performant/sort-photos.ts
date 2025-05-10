@@ -1,5 +1,5 @@
 import {Photo, ProcessingState} from "./performant-solution-types";
-import {padding} from "../../solution";
+import {padding} from "../commons/commons";
 
 /**
  * Mutates the state by computing the number for each photo within each city.
