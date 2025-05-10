@@ -7,7 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
@@ -17,5 +18,9 @@
     "npm": "^11.3.0",
     "ts-jest": "^29.3.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/ramda": "^0.30.2",
+    "ramda": "^0.30.1"
   }
 }

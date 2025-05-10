@@ -28,6 +28,19 @@ describe('photo-helper', () => {
 
       })
 
+      describe('same city', () => {
+
+        describe('already sorted', () => {
+
+          it(`should return CITY_NR.ext}`, () => {
+            expect(solution('photo.png, Buenos Aires, 2020-01-01 01:01:01\nanother.jpg, Buenos Aires, 2021-01-01 01:01:01'))
+                .toEqual('Buenos Aires1.png\nBuenos Aires2.jpg')
+          })
+
+        })
+
+      })
+
     })
 
   })
