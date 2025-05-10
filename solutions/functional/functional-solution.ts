@@ -1,16 +1,4 @@
-import {
-  always, append,
-  ifElse,
-  isEmpty, lensProp,
-  map,
-  mapObjIndexed,
-  over,
-  pipe,
-  prop,
-  sortBy,
-  split,
-  trim,
-} from "ramda";
+import {always, append, ifElse, isEmpty, lensProp, map, mapObjIndexed, over, pipe, prop, sortBy, split, trim} from "ramda";
 import {padding} from "../commons/commons";
 
 /**
