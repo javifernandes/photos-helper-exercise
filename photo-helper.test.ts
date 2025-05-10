@@ -21,7 +21,7 @@ describe('photo-helper', () => {
 
       describe('different cities', () => {
 
-        it.skip(`should return CITY_NR.ext}`, () => {
+        it(`should return CITY_NR.ext}`, () => {
           expect(solution('photo.png, Buenos Aires, 2025-05-10 10:26:00\nanother.jpg, London, 2023-05-10 10:26:00'))
               .toEqual('Buenos Aires1.png\nLondon1.jpg')
         })
