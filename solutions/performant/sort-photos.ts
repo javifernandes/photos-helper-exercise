@@ -1,4 +1,5 @@
 import {Photo, ProcessingState} from "./performant-solution-types";
+import {padding} from "../../solution";
 
 /**
  * Mutates the state by computing the number for each photo within each cities.
@@ -11,7 +12,7 @@ export const sortPhotos = (state: ProcessingState) => {
 
     // assign the position according to timestamp
     photos.forEach((photo, index) => {
-      photo.number = index + 1
+      photo.number = padding(photos.length, index + 1)
     })
   })
 }

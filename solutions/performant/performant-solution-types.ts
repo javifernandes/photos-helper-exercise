@@ -10,8 +10,8 @@ export type Photo = {
   city: string;
   timestamp: string;
 
-  /** the assigned position-number within the city */
-  number?: number;
+  /** The assigned position-number within the city already with the format having leading zeros */
+  number?: string;
 }
 
 /**

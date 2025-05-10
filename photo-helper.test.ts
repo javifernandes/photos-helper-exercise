@@ -1,6 +1,9 @@
 import {solution as functionalSolution } from "./solution";
 import {solution as performantSolution } from './solutions/performant/performant-solution'
 
+/**
+ * A single set of tests that apply for both solutions
+ */
 describe.each([
     ['functional', functionalSolution],
     ['performant', performantSolution]
